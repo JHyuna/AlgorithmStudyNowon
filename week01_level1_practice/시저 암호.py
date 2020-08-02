@@ -1,3 +1,6 @@
+"""https://programmers.co.kr/learn/courses/30/lessons/12926"""
+
+
 def alpha_move(c: str, n: int) -> str:
     if c == " ":
         return c
