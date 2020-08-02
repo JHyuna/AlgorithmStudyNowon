@@ -1,0 +1,50 @@
+# macOS
+.DS_Store
+
+# PyCharm
+.idea/
+
+# vscode
+.vscode/
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# virtual env
+venv/
+
+# tests
+.coverage
+.tox
+.mypy_cache/
+.pytest_cache/
+
+# private
+etc/
+
+# log
+*.log
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
