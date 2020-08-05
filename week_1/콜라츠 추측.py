@@ -1,6 +1,6 @@
 def solution(n):
     if n == 1:
-        return 1
+        return 0
     for cnt in range(500):
         if n % 2  == 0 :
             n /= 2
