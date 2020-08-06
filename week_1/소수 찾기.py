@@ -1,19 +1,16 @@
 def solution(n):
-    
-    cnt = 0
+    a = [False,False] + [True]*(n+1)
+    primes =[]
     for i in range(2,n+1):
-        flg = True
-        for j in range(2,i):
-            if i%j ==0:
-                flg = False
-                break
-        if flg == True:
-            
-            cnt+=1
+        if a[i]:
+            primes.append(i)
+            for j in range(2*i ,n+1, i):
+                print(j)
+                a[j] = False
+    return len(primes)
 
 
-    return cnt
-    
+
 
 print(solution(10))
 
