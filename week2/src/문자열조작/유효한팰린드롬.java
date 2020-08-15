@@ -61,4 +61,31 @@ public class 유효한팰린드롬 {
 		return true;
 	}
 	
+	// 또 다른 풀이
+	public boolean isPalindrome3(String s) {
+		boolean answer = true;
+		int left = 0, right = s.length()-1;
+		
+		char[] ch = s.toLowerCase().toCharArray();
+		while(left < right) {
+			if(Character.isLetterOrDigit(ch[left]) && Character.isLetterOrDigit(ch[right])) {
+				if(ch[left] != ch[right]) {
+					answer =false;
+					return answer;
+				}else {
+					answer = true;
+					left+=1;
+					right-=1;
+				}
+			}
+			else if(!Character.isLetterOrDigit(ch[left])) {
+				left+=1;
+			}
+			else {
+				right-=1;
+			}
+		}
+		return answer;
+	}
+	
 }
