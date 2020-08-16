@@ -5,7 +5,7 @@ from collections import Counter
 
 
 def solution(participant: List[str], completion: List[str]) -> str:
-    for result in (Counter(participant) - Counter(completion)).keys():
+    for result in Counter(participant) - Counter(completion):
         return result
 
 
