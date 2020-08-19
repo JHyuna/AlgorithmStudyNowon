@@ -7,10 +7,12 @@ def solution(n,arr1,arr2):
         a = cvt_bin(n,arr1[i])
         b = cvt_bin(n,arr2[i])
         k = list(f_result[i])
+        #print(k)
         for j in range(n):
             if a[j] == 0 and b[j] == 0:
                 k[j] = ' '
                 f_result[i] = ''.join(k)
+                #print(f_result)
             else:
                 continue
 
