@@ -40,17 +40,16 @@ public class 모의고사 {
         
         for(int i=0;i<3;i++) {
     	   if(amount[idx] == amount[i]) {
-    		   ch++;
     		   answer[j++] = i+1;
     	   }
        }
-       answer = Arrays.copyOf(answer,ch); 
+       answer = Arrays.copyOf(answer,j); 
        return answer;
     }
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] answers = {1,2,3,4,5};
+		int[] answers = {1,3,2,4,2};
 		모의고사 mo = new 모의고사();
 		//mo.solution(answers);
 		for(int i=0;i<mo.solution(answers).length;i++) {
