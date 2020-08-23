@@ -16,7 +16,6 @@
 # - 사각형이 직사각형이면 (가로 + 세로 - 최대공약수)
 # 가로*세로 - 지나는 단위 정사각형 개수
 from math import gcd
-from math import gcd
 def solution(w,h):
     passed_square = w + h - gcd(w,h)
     return w * h - passed_square
