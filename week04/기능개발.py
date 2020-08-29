@@ -1,6 +1,7 @@
 # progresses의 각 element를 popleft 사용, 앞에서부터
 # 100-progresses.popleft / speeds.popleft -> list에 담기
 # 실패한 풀이 -> test case에서 틀리는 경우 발생
+
 from collections import deque
 import math
 import numpy as np
