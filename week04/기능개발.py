@@ -19,6 +19,8 @@ def solution(progresses, speeds):
     work = [a.tolist() for a in np.split(work, np.where(np.diff(work) > 0)[0]+1)]
     answer = [len(work[i]) for i in range(len(work))]
     return answer
+[ 1, // 9, 1, 1, // 2, // 10, 1]
+
 
 # 수정한 풀이. max값으로 리스트 분할해야 하는 걸 놓쳤었음.
 from collections import deque
@@ -34,7 +36,7 @@ def solution(progresses, speeds):
         p, s = pro.popleft(), speed.popleft()
         length -= 1
         day = math.ceil((100 - p) / s)
-        days.append(day)
+        days.append(day) # days 리스트는 큰 피크를 찍는 원소를 기준으로, 뒤쪽으로 묶이면 됨.
 
     for i, e in enumerate(days):
         if i == 0:
