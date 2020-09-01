@@ -3,9 +3,6 @@ from collections import deque
 
 def solution(priorities, location):
 
-    if len(priorities) == 1:
-        return 1
-
     result = deque([(prior,index) for index,prior in enumerate(priorities)])
     answer = 0
 
@@ -24,5 +21,6 @@ def solution(priorities, location):
 
 
 print(solution([2, 1, 3, 2],2))
-
+print(solution([1,1],1))
+print(solution([1],0))
 
