@@ -15,7 +15,7 @@ def solution(ball,order):
 
             elif ball[-1] in tmp_list:
                 result.append(ball[-1])
-                tmp_list.remove(ball[-1])
+                tmp_list.remove(ball[-1])x
                 ball.pop(-1)
             
             else:
