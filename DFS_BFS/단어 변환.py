@@ -18,10 +18,7 @@ def dfs(begin, words, answer, target):
     if not 1 in diff:
         return 0
     else:
-        a=diff.index(1)
-        print(a)
         next_word = words[diff.index(1)]
-        
         answer.append(next_word)
         words.pop(diff.index(1))
         dfs(next_word, words, answer, target)
