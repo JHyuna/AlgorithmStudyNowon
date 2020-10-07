@@ -2,7 +2,7 @@
 
 """팰린드롬 만들기"""
 
-"""
+
 hash_map = {}
 
 name = input()
@@ -112,3 +112,4 @@ if odd > 1 :
 else:
     print(alpha + odd_alpha + alpha[::-1])
 
+"""
