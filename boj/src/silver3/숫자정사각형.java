@@ -1,4 +1,4 @@
-package solved;
+package silver3;
 
 import java.util.Scanner;
 
