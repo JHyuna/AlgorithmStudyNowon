@@ -36,8 +36,8 @@ print(len(n_str))
 """
 
 
-#시간초과
-"""
+
+
 tmp = 0
 for i in range(9):
     if 10**i <= N < 10**(i+1):
@@ -46,10 +46,27 @@ for i in range(9):
 for i in range(0,tmp-1):
     result = result + (10**(i+1)-1-10**i + 1)*(i+1)
 
-for i in range(10**(tmp-1),N+1):
-    result += tmp
+result += tmp*(N-10**(tmp-1)+1)
 
 print(result)
+
+
+#well
+"""
+
+n = input()
+n_len = len(n) - 1
+c = 0
+i = 0
+while i < n_len:
+    c += 9 * (10 ** i) * (i + 1)
+    i += 1
+c += ((int(n) - (10 ** n_len)) + 1) * (n_len + 1)
+print(c)
+
+"""
+
+
 """
 
 hash_map = {0:1,1:2,2:3,3:4,4:5,5:6,6:7,7:8,8:9,9:10}
@@ -59,7 +76,7 @@ for i in range(9):
     if 10**i <= N < 10**(i+1):
         tmp = i+1
         break
-print(tmp)
+#print(tmp)
 
 for i in range(tmp-1):
     result += hash_map[i]*(10**(i+1)-10**(i))
@@ -67,6 +84,7 @@ for i in range(tmp-1):
 result += hash_map[tmp-1]*(N-10**(tmp-1)+1)
 
 print(result)
+"""
 
 
 

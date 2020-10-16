@@ -3,6 +3,7 @@
 """팰린드롬 만들기"""
 
 
+
 hash_map = {}
 
 name = input()
