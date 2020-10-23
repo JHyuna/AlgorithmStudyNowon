@@ -6,4 +6,6 @@
 N = int(input())
 
 
+print(123)
+
 
