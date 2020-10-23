@@ -8,5 +8,5 @@ N = int(input())
 
 print(123)
 print(234)
-
+print(345)
 
