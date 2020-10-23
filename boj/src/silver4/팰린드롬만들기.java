@@ -2,97 +2,64 @@ package silver4;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class 팰린드롬만들기 {
-	
-	public static void main(String args[]) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String args[]) throws Exception {
+		BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));
+		Map<String,Integer> map = new HashMap<>();
+		String[] word = br.readLine().split("");
 		
-		String str = sc.next();
-		String[] arr = str.split("");
-		String answer = "";
-		Map<String, Integer> map = new HashMap<>();
-		for(int i=0;i<arr.length;i++) {
-			if(!map.containsKey(arr[i])) {
-				map.put(arr[i],0);
-			}
-			map.put(arr[i],map.get(arr[i])+1);
-		}
-		//System.out.println(map.entrySet());
-		
-		boolean ans = false;
-		int count = 0;
-		String middle = "";
-		//짝수인 경우
-		if(str.length()%2 == 0) {
-			for(String st :map.keySet()) {
-				//map 각 문자의 갯수 짝수개수
-				if(map.get(st)%2 ==0) {
-					ans = true;
-				}else {
-					ans = false;
+		for(int i=0; i < word.length; i++) {
+			for(int j=0; j < i; j++) {
+				if(word[i].equals(word[j])) {
+					map.put(word[j],map.get(word[j])+1);
 					break;
 				}
 			}
-		}else {
-			for(String st : map.keySet()) {
-				//map 각 문자의 갯수 짝수개수
-				if(map.get(st) % 2 ==0) {
-					ans = true;
-					count++;
-				}else {
-					if(!middle.equals("")) {
-						ans = false;
-						break; 
-					}
-					middle = st;
-				}
+			if(map.get(word[i]) == null) {
+				map.put(word[i], 1);
 			}
-			if(count == str.length()/2) {
-				ans = true;
-			}else if(map.keySet().size() == 1)
-				ans = true;
+		}
+		//홀수개인 경우 middle이 존재, 짝수면 없음
+		String middle = "";
+		int count = 0;
+		for(String key : map.keySet()){
+			if(map.get(key) % 2 != 0) {
+				middle = key;
+				map.put(key, map.get(key)-1);
+				count++;
+			}
 		}
 		
-		if(!ans) {
+		if(count > 1) {
 			System.out.println("I'm Sorry Hansoo");
 			return;
 		}
 		
-		int con = 0;
-		List<String> word = new ArrayList<>();
-		for(String ar : arr) {
-			if(ar.equals(middle) && con == 0) {
-				con++;
-				continue;
+		List<String> list = new ArrayList<>();
+		for(String key : map.keySet()) {
+			for(int i=0; i < map.get(key); i++) {
+				list.add(key);
 			}
-			word.add(ar);
 		}
 		
-		Collections.sort(word, new Comparator<String>() {
-
-			@Override
-			public int compare(String o1, String o2) {
-				return o1.compareTo(o2);
-			}
-			
-		});
-	
-		for(int i=0;i<word.size();i+=2) {
-			answer += word.get(i);
-		}
-		answer+= middle;
+		Collections.sort(list);
 		
-		for(int i=word.size()-1;i>=0;i-=2) {
-			answer+=word.get(i);
+		StringBuilder sb = new StringBuilder();
+		for(int i=0; i < list.size(); i+=2) {
+			sb.append(list.get(i));
 		}
-		System.out.println(answer);
+		sb.append(middle);
+		for(int i=list.size()-1; i >= 1; i-=2) {
+			sb.append(list.get(i));
+		}
+		
+		System.out.println(sb);
 	}
 }
-
